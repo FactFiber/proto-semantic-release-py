@@ -15,11 +15,11 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: 3.9
     - name: Install Python Poetry
-      uses: abatilo/actions-poetry@v2.1.0
+      uses: abatilo/actions-poetry@v2.1.4
       with:
-        poetry-version: 1.1.2
+        poetry-version: 1.1.12
     - name: Configure poetry
       shell: bash
       run: python -m poetry config virtualenvs.in-project true
@@ -31,12 +31,12 @@ jobs:
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        python -m poetry run flake8 . --exclude .venv --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        python -m poetry run flake8 . --exclude .venv --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        python -m poetry run flake8 .
+    - name: Run mypy
+        python -m poetry run mypy src tests
     - name: Test with pytest
       run: |
-        python -m poetry run python -m pytest -v tests
+        python -m poetry run pytest -v tests
     
   Release:
     needs: Quality
