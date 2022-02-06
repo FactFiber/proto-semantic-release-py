@@ -3,7 +3,7 @@ authors = ["Shaun Cutts <shaunc@factfiber.com>"]
 description = "Prototype repo with build tools and semantic release"
 license = "See License in LICENSE"
 name = "proto-semantic-release-py"
-version = "0.1.2"
+version = "0.1.3"
 
 packages = [{include = "demo", from = "src"}]
 
