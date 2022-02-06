@@ -33,6 +33,7 @@ jobs:
         # stop the build if there are Python syntax errors or undefined names
         python -m poetry run flake8 .
     - name: Run mypy
+      run: |
         python -m poetry run mypy src tests
     - name: Test with pytest
       run: |
