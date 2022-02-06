@@ -35,9 +35,9 @@ jobs:
     - name: Run mypy
       run: |
         python -m poetry run mypy src tests
-    - name: Test with pytest
+    - name: Test with pytest with coverage
       run: |
-        python -m poetry run pytest -v tests
+        python -m poetry run pytest -v tests --cov-fail-under=100
     
   Release:
     needs: Quality
