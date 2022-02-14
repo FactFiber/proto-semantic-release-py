@@ -9,8 +9,8 @@ plugins:
     - replacements:
       - files:
         - pyproject.toml
-        from: version = ".*"
-        to: version = "${nextRelease.version}"
+        from: 'version = ".*"'
+        to: 'version = "${nextRelease.version}"'
         results:
         - file: pyproject.toml
           hasChanged: true
@@ -19,10 +19,10 @@ plugins:
         countMatches: true
       - files:
         - src/demo/__init__.py
-        from: __VERSION__ = ".*"
-        to: __VERSION__ = "${nextRelease.version}"
+        from: '__VERSION__ = ".*"'
+        to: '__VERSION__ = "${nextRelease.version}"'
         results:
-        - file: demo/__init__.py
+        - file: src/demo/__init__.py
           hasChanged: true
           numMatches: 1
           numReplacements: 1
