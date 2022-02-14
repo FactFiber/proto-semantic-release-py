@@ -31,7 +31,9 @@ jobs:
     - name: Sort imports using isort
       run: |
         python -m poetry run isort .
-    - name: Format using black src tests
+    - name: Format using black
+      run: |
+        python -m poetry run black src tests
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
