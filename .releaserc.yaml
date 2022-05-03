@@ -19,8 +19,8 @@ plugins:
         countMatches: true
       - files:
         - src/demo/__init__.py
-        from: '__VERSION__ = ".*"'
-        to: '__VERSION__ = "${nextRelease.version}"'
+        from: '__version__ = ".*"'
+        to: '__version__ = "${nextRelease.version}"'
         results:
           - file: src/demo/__init__.py
             hasChanged: true
